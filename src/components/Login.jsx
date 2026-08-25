@@ -19,24 +19,38 @@ const Login = () => {
     });
   };
 
-  const Loggedin = () => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+ const Loggedin = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!storedUser) {
-      alert("No account found. Please Sign Up.");
-      navigate("/signup");
-      return;
-    }
+  if (!storedUser) {
+    alert("No account found. Please Sign Up.");
+    navigate("/signup");
+    return;
+  }
 
-    if(userdata.mail === storedUser.mail && userdata.password === storedUser.password){
-        alert("Login successfull")
-        navigate("/dashboard")
-    }
-    else{
-        alert("Account unavailable Sign-Up!")
-    }
+  if (!userdata.mail) {
+    alert("Enter your email");
+    return;
+  }
 
-  }   
+  if (!userdata.password) {
+    alert("Enter your password");
+    return;
+  }
+
+  if (userdata.mail !== storedUser.mail) {
+    alert("Account unavailable. Please Sign Up!");
+    return;
+  }
+
+  if (userdata.password !== storedUser.password) {
+    alert("Password Incorrect");
+    return;
+  }
+
+  alert("Login successful!");
+  navigate("/dashboard");
+};
 
   const [showPassword, setShowPassword] = useState(false);
   return (
