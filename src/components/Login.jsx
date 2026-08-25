@@ -47,24 +47,27 @@ const Login = () => {
           <label className="block m-2 font-bold">Email</label>
           <input type="mail" required="true" name="mail" value={userdata.mail} onChange={handleChange} className="border rounded-md px-3 py-2 w-full bg-white" placeholder="Enter your e-mail" />
         </div>
-       <div className="relative">
+       <div className="w-full">
+        <label className="block m-2 font-bold">Password</label>
+        <div className="relative">
             <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={userdata.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              className="border rounded-md px-3 py-2 bg-white w-full pr-12"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={userdata.password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                className="border rounded-md px-3 py-2 bg-white w-full pr-12"
             />
 
             <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-2 text-xl"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
             >
               {showPassword ? "🙈" : "👁️"}
             </button>
-          </div>
+        </div>
+</div>
         <div>
           <p className="p-2 text-xs indent-35 font-bold"> If you dont have Account? <Link to="/signup" className="underline active:text-white hover:text-sky-400 ">Sign Up</Link></p>
         </div>
