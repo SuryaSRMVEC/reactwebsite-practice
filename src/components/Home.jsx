@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
+
 const Home = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-purple-950 text-white flex justify-center items-center">
-        <Navbar />
       <div className="text-center">
 
         <h1 className="text-5xl font-bold mb-4">
