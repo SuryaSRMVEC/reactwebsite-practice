@@ -8,7 +8,6 @@ const Navbar = () => {
     localStorage.getItem("isLoggedIn") === "true"
   );
 
-  // LOGOUT FUNCTION
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
 
@@ -21,19 +20,12 @@ const Navbar = () => {
 
   return (
     <nav className="bg-purple-800 text-white px-8 py-4 flex justify-between items-center">
-
-      {/* LOGO */}
-
       <button
         onClick={() => navigate("/")}
         className="text-2xl font-bold"
       >
         MyApp
       </button>
-
-
-      {/* NAVIGATION */}
-
       <div className="flex items-center gap-4">
 
         <button
@@ -52,9 +44,6 @@ const Navbar = () => {
             >
               Dashboard
             </button>
-
-            {/* LOGOUT BUTTON */}
-
             <button
               onClick={handleLogout}
               className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600"

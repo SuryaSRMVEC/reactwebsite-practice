@@ -96,266 +96,439 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-5">
-      <Navbar />
-      <div className="flex justify-center items-center">
-       <div className="flex justify-center items-start  bg-gray-100 p-6">
-
-  <div className="w-full max-w-2xl bg-white border border-black rounded-xl shadow-lg p-6">
-
-    <h2 className="text-2xl font-bold mb-6 text-center">
-      Personal Details
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label className="block font-semibold mb-1">
-          Name
-        </label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          onChange={handleChange}
-          value={userInfo.name}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          Age
-        </label>
-        <input
-          type="number"
-          name="age"
-          placeholder="Enter your age"
-          onChange={handleChange}
-          value={userInfo.age}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your e-mail"
-          onChange={handleChange}
-          value={userInfo.email}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          Phone
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Enter your phone"
-          onChange={handleChange}
-          value={userInfo.phone}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          Date of Birth
-        </label>
-        <input
-          type="date"
-          name="dob"
-          value={userInfo.dob}
-          onChange={handleChange}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          City
-        </label>
-        <input
-          type="text"
-          name="city"
-          placeholder="Enter your city"
-          value={userInfo.city}
-          onChange={handleChange}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          State
-        </label>
-        <input
-          type="text"
-          name="state"
-          placeholder="Enter your state"
-          value={userInfo.state}
-          onChange={handleChange}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">
-          Country
-        </label>
-        <input
-          type="text"
-          name="country"
-          placeholder="Enter your country"
-          value={userInfo.country}
-          onChange={handleChange}
-          className="border border-gray-500 rounded-md px-3 py-2 w-full"
-        />
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-2">
-          Gender
-        </label>
-
-        <div className="flex items-center gap-4 h-10">
-
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              checked={userInfo.gender === "Male"}
-              onChange={handleChange}
-            />
-            Male
+   <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-slate-100 p-4 sm:p-6">
+  <Navbar />
+  <div className="flex justify-center items-center mt-6 sm:mt-8">
+    <div
+      className="w-full max-w-3xl
+                 bg-white/90 backdrop-blur-sm
+                 rounded-2xl
+                 shadow-xl
+                 p-5 sm:p-8
+                 transition-all duration-300
+                 hover:shadow-2xl"
+    >
+      <h2
+        className="text-2xl sm:text-3xl font-bold
+                   text-center text-purple-800
+                   mb-6 sm:mb-8"
+      >
+        Personal Details
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Name
           </label>
 
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              name="gender"
-              value="Female"
-              checked={userInfo.gender === "Female"}
-              onChange={handleChange}
-            />
-            Female
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            onChange={handleChange}
+            value={userInfo.name}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Age
           </label>
 
+          <input
+            type="number"
+            name="age"
+            placeholder="Enter your age"
+            onChange={handleChange}
+            value={userInfo.age}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Email
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            onChange={handleChange}
+            value={userInfo.email}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Phone
+          </label>
+
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone"
+            onChange={handleChange}
+            value={userInfo.phone}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Date of Birth
+          </label>
+
+          <input
+            type="date"
+            name="dob"
+            value={userInfo.dob}
+            onChange={handleChange}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            City
+          </label>
+
+          <input
+            type="text"
+            name="city"
+            placeholder="Enter your city"
+            value={userInfo.city}
+            onChange={handleChange}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            State
+          </label>
+
+          <input
+            type="text"
+            name="state"
+            placeholder="Enter your state"
+            value={userInfo.state}
+            onChange={handleChange}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Country
+          </label>
+
+          <input
+            type="text"
+            name="country"
+            placeholder="Enter your country"
+            value={userInfo.country}
+            onChange={handleChange}
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Gender
+          </label>
+
+          <div
+            className="flex items-center gap-6
+                       min-h-[48px]
+                       px-4"
+          >
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                checked={userInfo.gender === "Male"}
+                onChange={handleChange}
+                className="accent-purple-600"
+              />
+              <span className="text-gray-700">Male</span>
+            </label>
+
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                checked={userInfo.gender === "Female"}
+                onChange={handleChange}
+                className="accent-purple-600"
+              />
+              <span className="text-gray-700">Female</span>
+            </label>
+          </div>
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Address
+          </label>
+
+          <textarea
+            name="address"
+            value={userInfo.address}
+            onChange={handleChange}
+            placeholder="Enter your address"
+            rows="3"
+            className="w-full px-4 py-3
+                       border border-gray-300
+                       rounded-lg
+                       bg-gray-50
+                       outline-none
+                       resize-none
+                       transition-all duration-300
+                       focus:bg-white
+                       focus:border-purple-500
+                       focus:ring-2 focus:ring-purple-200
+                       hover:border-purple-400"
+          />
         </div>
       </div>
 
-      <div className="md:col-span-2">
-        <label className="block font-semibold mb-1">
-          Address
-        </label>
+      <div className="flex justify-center mt-7">
 
-        <textarea
-          name="address"
-          value={userInfo.address}
-          onChange={handleChange}
-          placeholder="Enter your address"
-          rows="3"
-          className="border border-gray-500 rounded-md px-3 py-2 w-full resize-none"
-        />
+        {buttonState === "add" ? (
+
+          <button
+            onClick={addData}
+            className="w-full sm:w-auto
+                       px-8 py-3
+                       rounded-lg
+                       bg-purple-600
+                       text-white
+                       font-semibold
+                       transition-all duration-300
+                       hover:bg-purple-700
+                       hover:shadow-lg
+                       hover:-translate-y-0.5
+                       active:scale-95"
+          >
+            Add
+          </button>
+
+        ) : (
+
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+
+            <button
+              onClick={updateData}
+              className="w-full sm:w-auto
+                         px-8 py-3
+                         rounded-lg
+                         bg-purple-600
+                         text-white
+                         font-semibold
+                         transition-all duration-300
+                         hover:bg-purple-700
+                         hover:shadow-lg
+                         hover:-translate-y-0.5
+                         active:scale-95"
+            >
+              Update
+            </button>
+
+            <button
+              onClick={CancelEditing}
+              className="w-full sm:w-auto
+                         px-8 py-3
+                         rounded-lg
+                         bg-gray-200
+                         text-gray-700
+                         font-semibold
+                         transition-all duration-300
+                         hover:bg-gray-300
+                         hover:shadow-md
+                         active:scale-95"
+            >
+              Cancel
+            </button>
+
+          </div>
+        )}
       </div>
-
     </div>
-
-    <div className="flex justify-center mt-6">
-
-      {buttonState === "add" ? (
-
-        <button
-          onClick={addData}
-          className="border border-green-300 bg-green-400 hover:bg-green-500 px-6 py-2 rounded-lg font-semibold"
-        >
-          Add
-        </button>
-
-      ) : (
-
-        <div className="flex gap-2">
-
-          <button
-            onClick={updateData}
-            className="border border-green-300 bg-green-400 hover:bg-green-500 px-6 py-2 rounded-lg font-semibold"
-          >
-            Update
-          </button>
-
-          <button
-            onClick={CancelEditing}
-            className="border border-red-300 bg-red-400 hover:bg-red-500 px-6 py-2 rounded-lg font-semibold"
-          >
-            Cancel
-          </button>
-
-        </div>
-
-      )}
-
-    </div>
-
   </div>
 
-</div>
-      </div>
-      <table className="m-auto border-collapse border border-black">
+  <div className="mt-8">
+
+    <h2 className="text-xl sm:text-2xl font-bold text-center text-purple-800 mb-4">
+      User Details
+    </h2>
+
+    <div
+      className="w-full overflow-x-auto
+                 rounded-xl shadow-lg bg-white"
+    >
+      <table className="w-full min-w-[1200px] border-collapse">
+
         <thead>
-          <tr>
-            <th className="p-2 border border-black">Name</th>
-            <th className="p-2 border border-black">Age</th>
-            <th className="p-2 border border-black">Email</th>
-            <th className="p-2 border border-black">Phone</th>
-            <th className="p-2 border border-black">Gender</th>
-            <th className="p-2 border border-black">D.O.B</th>
-            <th className="p-2 border border-black">City</th>
-            <th className="p-2 border border-black">State</th>
-            <th className="p-2 border border-black">Country</th>
-            <th className="p-2 border border-black">Address</th>
-            <th className="p-2 border border-black">Actions</th>
+          <tr className="bg-purple-700 text-white">
+
+            <th className="p-3 text-left">Name</th>
+            <th className="p-3 text-left">Age</th>
+            <th className="p-3 text-left">Email</th>
+            <th className="p-3 text-left">Phone</th>
+            <th className="p-3 text-left">Gender</th>
+            <th className="p-3 text-left">D.O.B</th>
+            <th className="p-3 text-left">City</th>
+            <th className="p-3 text-left">State</th>
+            <th className="p-3 text-left">Country</th>
+            <th className="p-3 text-left">Address</th>
+            <th className="p-3 text-center">Actions</th>
+
           </tr>
         </thead>
+
         <tbody>
-          {users.map((user, index) => {
-            return (
-              <tr key={index}>
-                <td className="p-2 border border-black">{user.name}</td>
-                <td className="p-2 border border-black">{user.age}</td>
-                <td className="p-2 border border-black">{user.email}</td>
-                <td className="p-2 border border-black">{user.phone}</td>
-                <td className="p-2 border border-black">{user.gender}</td>
-                <td className="p-2 border border-black">{user.dob}</td>
-                <td className="p-2 border border-black">{user.city}</td>
-                <td className="p-2 border border-black">{user.state}</td>
-                <td className="p-2 border border-black">{user.country}</td>
-                <td className="p-2 border border-black">{user.address}</td>
-                <td className="p-2 border border-black"> 
+          {users.map((user, index) => (
+            <tr
+              key={index}
+              className="border-b border-gray-200
+                         hover:bg-purple-50
+                         transition-colors duration-200"
+            >
+
+              <td className="p-3">{user.name}</td>
+              <td className="p-3">{user.age}</td>
+              <td className="p-3">{user.email}</td>
+              <td className="p-3">{user.phone}</td>
+              <td className="p-3">{user.gender}</td>
+              <td className="p-3">{user.dob}</td>
+              <td className="p-3">{user.city}</td>
+              <td className="p-3">{user.state}</td>
+              <td className="p-3">{user.country}</td>
+              <td className="p-3 max-w-xs truncate">
+                {user.address}
+              </td>
+
+              <td className="p-3">
+                <div className="flex justify-center gap-2">
+
                   <button
                     onClick={() => startEditing(user)}
-                    className="bg-blue-400 px-3 py-1 rounded mr-2"
+                    className="px-3 py-1.5
+                               rounded-md
+                               bg-blue-500
+                               text-white
+                               text-sm
+                               transition-all duration-200
+                               hover:bg-blue-600
+                               hover:-translate-y-0.5
+                               active:scale-95"
                   >
                     Edit
                   </button>
+
                   <button
                     onClick={() => deleteData(user.id)}
-                    className="bg-red-400 px-3 py-1 rounded"
+                    className="px-3 py-1.5
+                               rounded-md
+                               bg-red-500
+                               text-white
+                               text-sm
+                               transition-all duration-200
+                               hover:bg-red-600
+                               hover:-translate-y-0.5
+                               active:scale-95"
                   >
                     Delete
                   </button>
-                </td>
-              </tr>
-            );
-          })}
+
+                </div>
+              </td>
+
+            </tr>
+          ))}
         </tbody>
+
       </table>
     </div>
+  </div>
+</div>
   );
 };
 

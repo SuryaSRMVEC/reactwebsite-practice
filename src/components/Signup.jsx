@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -104,24 +104,58 @@ const Signup = () => {
   navigate("/login");
 };
 
-
   return (
-    <div className="m-0 p-0 bg-purple-900 min-h-screen flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center w-112.5 max-w-[90%] border px-8 py-8 bg-purple-600 rounded-xl shadow-xl shadow-indigo-400">
-        <h2 className="text-3xl font-bold mb-5">Signup</h2>
-        <div className="w-full">
-          <label className="block m-2 font-bold">
-            Email
-          </label>
+    <div
+      className="min-h-screen w-full flex items-center justify-center
+                 bg-cover bg-center bg-no-repeat
+                 px-4 py-8"
+      style={{
+        backgroundImage: "url('/signupbg.png')",
+      }}
+    >
+      <div
+        className="w-full max-w-md
+                   px-6 py-7 sm:px-10 sm:py-8
+                   bg-cyan-300/35 backdrop-blur-md
+                   border border-white/20
+                   shadow-2xl
+                   rounded-none
+                   transition-all duration-500
+                   hover:bg-cyan-300/40"
+      >
 
-          <input
-            type="email"
-            name="mail"
-            value={newUserData.mail}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            className="border rounded-md px-3 py-2 bg-white w-full"
-          />
+        <h2
+          className="text-center text-2xl sm:text-3xl
+                     tracking-[4px] font-light
+                     text-gray-800 mb-7"
+        >
+          SIGN UP
+        </h2>
+
+        <div className="mb-4">
+          <div className="flex bg-slate-800/80">
+
+            <div
+              className="w-12 min-w-12 flex items-center justify-center
+                         bg-slate-900/70 text-white text-lg"
+            >
+              <i className="fi fi-rr-user"></i>
+            </div>
+
+            <input
+              type="email"
+              name="mail"
+              value={newUserData.mail}
+              onChange={handleChange}
+              placeholder="Username"
+              required
+              className="w-full bg-transparent
+                         text-white placeholder-gray-400
+                         px-4 py-3 outline-none
+                         transition-all duration-300
+                         focus:bg-slate-700/50"
+            />
+          </div>
 
           {errors.mail && (
             <p className="text-red-700 text-sm font-semibold mt-1">
@@ -130,28 +164,50 @@ const Signup = () => {
           )}
         </div>
 
-        <div className="w-full">
-          <label className="block m-2 font-bold">
-            Password
-          </label>
+        <div className="mb-4">
+          <div className="flex bg-slate-800/80">
 
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={newUserData.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              className="border rounded-md px-3 py-2 bg-white w-full pr-12"
-            />
-
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-2 text-xl"
+            <div
+              className="w-12 min-w-12 flex items-center justify-center
+                         bg-slate-900/70 text-white text-lg"
             >
-              <i className={showPassword ? "fi fi-rr-eye" : "fi fi-rr-eye-crossed"}></i>
-            </button>
+              <i className="fi fi-rr-lock"></i>
+            </div>
+
+            <div className="relative w-full">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={newUserData.password}
+                onChange={handleChange}
+                placeholder="Password"
+                required
+                className="w-full bg-transparent
+                           text-white placeholder-gray-400
+                           px-4 py-3 pr-12 outline-none
+                           transition-all duration-300
+                           focus:bg-slate-700/50"
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2
+                           -translate-y-1/2
+                           text-gray-300
+                           hover:text-white
+                           transition-all duration-300
+                           hover:scale-110"
+              >
+                <i
+                  className={
+                    showPassword
+                      ? "fi fi-rr-eye"
+                      : "fi fi-rr-eye-crossed"
+                  }
+                ></i>
+              </button>
+            </div>
           </div>
 
           {errors.password && (
@@ -159,36 +215,54 @@ const Signup = () => {
               {errors.password}
             </p>
           )}
-
-          <p className="text-sm mt-1 text-gray-900">
-            Password must contain at least 8 characters
-          </p>
         </div>
 
-        <div className="w-full">
-          <label className="block m-2 font-bold">
-            Confirm Password
-          </label>
+        <div className="mb-5">
+          <div className="flex bg-slate-800/80">
 
-          <div className="relative">
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmpassword"
-              value={newUserData.confirmpassword}
-              onChange={handleChange}
-              placeholder="Confirm your password"
-              className="border rounded-md px-3 py-2 bg-white w-full pr-12"
-            />
-
-            <button
-              type="button"
-              onClick={() =>
-                setShowConfirmPassword(!showConfirmPassword)
-              }
-              className="absolute right-3 top-2 text-xl"
+            <div
+              className="w-12 min-w-12 flex items-center justify-center
+                         bg-slate-900/70 text-white text-lg"
             >
-               <i className={showConfirmPassword ? "fi fi-rr-eye" : "fi fi-rr-eye-crossed"}></i>
-            </button>
+              <i className="fi fi-rr-lock"></i>
+            </div>
+
+            <div className="relative w-full">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                name="confirmpassword"
+                value={newUserData.confirmpassword}
+                onChange={handleChange}
+                placeholder="Confirm Password"
+                required
+                className="w-full bg-transparent
+                           text-white placeholder-gray-400
+                           px-4 py-3 pr-12 outline-none
+                           transition-all duration-300
+                           focus:bg-slate-700/50"
+              />
+
+              <button
+                type="button"
+                onClick={() =>
+                  setShowConfirmPassword(!showConfirmPassword)
+                }
+                className="absolute right-3 top-1/2
+                           -translate-y-1/2
+                           text-gray-300
+                           hover:text-white
+                           transition-all duration-300
+                           hover:scale-110"
+              >
+                <i
+                  className={
+                    showConfirmPassword
+                      ? "fi fi-rr-eye"
+                      : "fi fi-rr-eye-crossed"
+                  }
+                ></i>
+              </button>
+            </div>
           </div>
 
           {errors.confirmpassword && (
@@ -200,10 +274,34 @@ const Signup = () => {
 
         <button
           onClick={Signedup}
-          className="border p-2 m-5 rounded-full w-28 bg-blue-400 font-bold hover:bg-sky-500"
+          className="w-full py-3
+                     bg-emerald-400
+                     text-gray-900
+                     tracking-[2px]
+                     font-medium
+                     transition-all duration-300
+                     hover:bg-emerald-300
+                     hover:tracking-[4px]
+                     hover:shadow-lg
+                     active:scale-95"
         >
-          Sign Up
+          Sign In
         </button>
+
+        <div className="text-center mt-5">
+          <p className="text-white/90 text-sm">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="underline font-medium
+                         hover:text-cyan-200
+                         transition-colors duration-300"
+            >
+              Login
+            </Link>
+          </p>
+        </div>
+
       </div>
     </div>
   );
