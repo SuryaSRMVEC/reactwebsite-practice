@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate} from "react-router-dom"
 const Login = () => {
 
@@ -18,7 +18,14 @@ const Login = () => {
         };
     });
   };
+  useEffect(() => {
+  const isLoggedIn =
+    localStorage.getItem("isLoggedIn") === "true";
 
+  if (isLoggedIn) {
+    navigate("/dashboard", { replace: true });
+  }
+}, [navigate]);
  const Loggedin = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
@@ -48,6 +55,7 @@ const Login = () => {
     return;
   }
 
+  localStorage.setItem("isLoggedIn", "true");
   alert("Login successful!");
   navigate("/dashboard");
 };
@@ -55,7 +63,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="m-0 p-0 bg-rose-600 min-h-screen flex justify-center items-center">
-     <div className="flex flex-col justify-center items-center py-6 px-10 border m-10 w-[450px] max-w-[90%] bg-pink-600 rounded-xl shadow-xl shadow-pink-300">
+     <div className="flex flex-col justify-center items-center py-6 px-10 border m-10 w-112.5 max-w-[90%] bg-pink-600 rounded-xl shadow-xl shadow-pink-300">
         <h2 className="text-3xl font-bold ">Login</h2>
         <div className="w-full">
           <label className="block m-2 font-bold">Email</label>
@@ -78,7 +86,7 @@ const Login = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
             >
-              {showPassword ? "🙈" : "👁️"}
+               <i className={showPassword ? "fi fi-rr-eye" : "fi fi-rr-eye-crossed"}></i>
             </button>
         </div>
 </div>

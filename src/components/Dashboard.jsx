@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import Navbar from "./Navbar";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
@@ -96,6 +97,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-5">
+      <Navbar />
       <div className="flex justify-center items-center">
        <div className="flex justify-center items-start  bg-gray-100 p-6">
 
